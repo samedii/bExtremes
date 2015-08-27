@@ -8,5 +8,5 @@ Description: Automated process for "peaks over threshold" with Markov chain Mont
 Depends: R (>= 3.1.2), rugarch
 Imports: devtools, compiler
 License: GPL
-LazyData: true
+LazyData: false
 ByteCompile: true
