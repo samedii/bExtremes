@@ -34,7 +34,7 @@ createExpertPrior <- function(m,q,mDiff,qDiff,y) {
 		            ((p1*p2)^-ksi*(log(p2)-log(p1))-p2^-ksi*log(p2)+p1^-ksi*log(p1))))
 		  sigmaksi.prior
 	}
-	cmpfun(expertPrior)
+	compiler::cmpfun(expertPrior)
 }
 
 #' Reference prior
@@ -52,8 +52,6 @@ referencePrior <- function(gp.parm) {
     ksi.prior <- log(1/(sigma*(1+ksi)*sqrt(1+2*ksi)))
     sigma.prior+ksi.prior
 }
-#referencePrior <- cmpfun(referencePrior)
-
 
 paramsFromExpert <- function(m,q,mDiff,qDiff) {
 

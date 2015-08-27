@@ -50,9 +50,9 @@ createModel <- function(data, gp.prior) {
 	} else {
 		stop('Unrecognized distribution')
 	}
-	dbody <- cmpfun(dbody)
-	pbody <- cmpfun(pbody)
-	body.prior <- cmpfun(body.prior)
+	dbody <- compiler::cmpfun(dbody)
+	pbody <- compiler::cmpfun(pbody)
+	body.prior <- compiler::cmpfun(body.prior)
 
 	gp.lb <- c(data$gp.u.lb,0,0)
 	gp.ub <- c(data$gp.u.ub,Inf,1)
@@ -60,7 +60,7 @@ createModel <- function(data, gp.prior) {
 	dtail <- function(x,gp.parm,log=FALSE) {
 		dgp(x,gp.parm,log)
 	}
-	dtail <- cmpfun(dtail)
+	dtail <- compiler::cmpfun(dtail)
 
 	body.index <- 1:(data$parm.length-2)
 	tail.index <- (data$parm.length-1):data$parm.length
@@ -128,7 +128,7 @@ createModel <- function(data, gp.prior) {
 	                    parm=parm)
 	    return(Modelout)
 	}
-	cmpfun(model)
+	compiler::cmpfun(model)
 }
 
 #' Create fixed-threshold GP model
@@ -161,5 +161,5 @@ createGPModel <- function(gp.prior) {
 					    parm=parm)
 		   return(Modelout)
 	}
-	cmpfun(gpModel)
+	compiler::cmpfun(gpModel)
 }
