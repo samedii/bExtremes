@@ -11,7 +11,7 @@ A fixed-threshold GP model is also included for comparisons (see functions creat
     devtools::dev_mode(on=TRUE)
     attempt <- try(loadNamespace('bExtremes'))
     if(inherits(attempt, 'try-error')) {
-    	devtools::install_github('samedii/bExtremes')
+    	devtools::install_github('cinnober/bExtremes')
     }
     library(bExtremes)
     
