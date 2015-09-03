@@ -1,5 +1,5 @@
 # bExtremes
-R package for estimation using extreme value theory and Bayesian inference.
+R package for extreme risk estimation using extreme value theory and Bayesian inference.
 
 Automatic threshold weighting is done with body-tail models. Implemented body distributions include "GH" and "GP". The latter is recommended.
 
