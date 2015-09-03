@@ -6,6 +6,7 @@ Automatic threshold weighting is done with body-tail models. Implemented body di
 A fixed-threshold GP model is also included for comparisons (see functions createGPData and createGPModel).
 
 ## Usage
+
     loadNamespace('devtools')
     devtools::dev_mode(on=TRUE)
     attempt <- try(loadNamespace('bExtremes'))
@@ -15,7 +16,7 @@ A fixed-threshold GP model is also included for comparisons (see functions creat
     library(bExtremes)
     
     #cat('Getting data...\n')
-    #orgData <- fetchExampleStockData('BAC') #function unavailable
+    #orgData <- fetchExampleStockData('BAC') #function unavailable, replace with your own
     
     #Transforming and flipping data (because right tail is modelled)
     #transformedData <- -transformStockData(orgData)
@@ -71,4 +72,3 @@ A fixed-threshold GP model is also included for comparisons (see functions creat
     hist(fit$Monitor[,7],breaks=100)
     LaplacesDemon::joint.density.plot(fit$Monitor[,7],fit$Monitor[,8])
     LaplacesDemon::joint.pr.plot(fit$Posterior2[,3],fit$Monitor[,7])
-    }
