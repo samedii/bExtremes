@@ -9,9 +9,16 @@ A fixed-threshold GP model is also included for comparisons (see functions creat
 
     loadNamespace('devtools')
     devtools::dev_mode(on=TRUE)
-    attempt <- try(loadNamespace('bExtremes'))
+    
+    #Requires LaplacesDemon package from github repo: samedii/LaplacesDemon
+    attempt <- try(loadNamespace('LaplacesDemon'))
     if(inherits(attempt, 'try-error')) {
-    	devtools::install_github('cinnober/bExtremes')
+        devtools::install_github('samedii/LaplacesDemon')
+    }
+    
+    attempt <- try(library(bExtremes))
+    if(inherits(attempt, 'try-error')) {
+        devtools::install_github('samedii/bExtremes')
     }
     library(bExtremes)
     
