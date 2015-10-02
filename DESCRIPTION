@@ -3,7 +3,7 @@ Title: Extreme Value Theory with Bayesian Inference
 Version: 1.0.0.0000
 Authors@R: c(
 	person("Richard", "Hermanson", , "hermansonrichard@gmail.com", role = c("aut", "cre")),
-	person("Philip", "Bramstang", , "philipbramstang@gmail.com", role = c("aut", "cre")))
+	person("Philip", "Bramstang", , "philipbramstang@gmail.com", role = c("aut")))
 Description: Automated process for "peaks over threshold" with Markov chain Monte Carlo
 Depends: R (>= 3.1.2), rugarch
 Imports: devtools, compiler
